@@ -3,12 +3,23 @@ import { Container, InputSpan } from "./style";
 
 export function Header() {
 
-    const [uploadFile, setUploadFile] = useState<FileList | null>(null)
+    const [uploadFile, setUploadFile] = useState<File | null>(null)
 
-    function handleCsvFile() {
-        if(uploadFile){
-            console.log('teste')
+    function ExcelToB64() {
+        if(uploadFile) {
+            let data
+            const reader = new FileReader();
+            reader.readAsDataURL(uploadFile);
+            reader.onload = (event) => {
+                data = event.target?.result
+                const base64Code = JSON.stringify(data).split(',')
+                return b64ToCsv(base64Code[1])
+            }
         }
+    }
+
+    function b64ToCsv(b64File: string) {
+        console.log(b64File)
     }
 
     return(
@@ -18,14 +29,15 @@ export function Header() {
             </div>
             <div>
                 <InputSpan uploadFile={uploadFile}>
-                    <label htmlFor="upload">{uploadFile ? uploadFile[0].name : 'Select CSV'}</label>
+                    <label htmlFor="upload">{uploadFile ? uploadFile.name : 'Select CSV'}</label>
                     <input 
                         type="file" 
                         id="upload"
-                        onChange={(e) => setUploadFile(e.target.files)}
+                        accept=".xlsx"
+                        onChange={(e) => setUploadFile(e.target.files&& e.target.files[0])}
                     />
                 </InputSpan>
-                <button onClick={handleCsvFile} disabled={uploadFile === null}> Import table</button>
+                <button onClick={ExcelToB64} disabled={uploadFile === null}> Import table</button>
             </div>
         </Container>
     )
