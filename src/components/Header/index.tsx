@@ -13,7 +13,7 @@ export function Header() {
             reader.onload = (event) => {
                 data = event.target?.result
                 const base64Code = JSON.stringify(data).split(',')
-                return b64ToCsv(base64Code[1])
+                b64ToCsv(base64Code[1])
             }
         }
     }
