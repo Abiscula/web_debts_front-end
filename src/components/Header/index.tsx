@@ -1,21 +1,22 @@
 import { useState } from "react";
 import { Container, InputSpan } from "./style";
+import axios from "axios";
 
 export function Header() {
 
     const [uploadFile, setUploadFile] = useState<File | null>(null)
 
-    function ExcelToB64() {
+    async function ExcelToB64() {
         if(uploadFile) {
-            let data
-            const reader = new FileReader();
-            reader.readAsDataURL(uploadFile);
-            reader.onload = (event) => {
-                data = event.target?.result
-                const base64Code = JSON.stringify(data).split(',')
-                b64ToCsv(base64Code[1])
+            console.log(uploadFile)
+                const resp = await axios.request({
+                    method: 'post',
+                    baseURL: 'http://localhost:3333/table',
+                    headers: { 'Content-Type': 'multipart/form-data' },
+                    data: { table: uploadFile }
+                })
+                console.log(resp)
             }
-        }
     }
 
     function b64ToCsv(b64File: string) {
