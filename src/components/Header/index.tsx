@@ -6,9 +6,9 @@ export function Header() {
 
     const [uploadFile, setUploadFile] = useState<File | null>(null)
 
-    async function ExcelToB64() {
-        if(uploadFile) {
-            console.log(uploadFile)
+    async function sendFile() {
+        if (uploadFile) {
+            try{
                 const resp = await axios.request({
                     method: 'post',
                     baseURL: 'http://localhost:3333/table',
@@ -16,14 +16,13 @@ export function Header() {
                     data: { table: uploadFile }
                 })
                 console.log(resp)
+            } catch(error) {
+                console.log(error)
             }
+        }
     }
 
-    function b64ToCsv(b64File: string) {
-        console.log(b64File)
-    }
-
-    return(
+    return (
         <Container>
             <div>
                 <h1>Spending control</h1>
@@ -31,14 +30,14 @@ export function Header() {
             <div>
                 <InputSpan uploadFile={uploadFile}>
                     <label htmlFor="upload">{uploadFile ? uploadFile.name : 'Select CSV'}</label>
-                    <input 
-                        type="file" 
+                    <input
+                        type="file"
                         id="upload"
                         accept=".xlsx"
-                        onChange={(e) => setUploadFile(e.target.files&& e.target.files[0])}
+                        onChange={(e) => setUploadFile(e.target.files && e.target.files[0])}
                     />
                 </InputSpan>
-                <button onClick={ExcelToB64} disabled={uploadFile === null}> Import table</button>
+                <button onClick={sendFile} disabled={uploadFile === null}> Import table</button>
             </div>
         </Container>
     )
