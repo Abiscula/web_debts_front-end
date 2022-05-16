@@ -31,10 +31,15 @@ export const Container = styled.header`
         font-size: 1.05rem;
         font-weight: bold;
         cursor: pointer;
-    }
 
-    button:disabled {
-        opacity: 0.5;
+        &:hover {
+            opacity: 0.8;
+            color: var(--header-background);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
     }
 `
 
