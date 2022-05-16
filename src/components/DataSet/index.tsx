@@ -1,6 +1,9 @@
+import { Table } from "./Table";
 
 export function DataSet() {
     return (
-        <h1>DataSet</h1>
+        <>
+            <Table />
+        </>
     )
 }
