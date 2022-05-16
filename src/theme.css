@@ -1,5 +1,11 @@
 :root {
+    --background: #F0F2F5;
     --header-white: #fefefe;
     --header-background: #324353;
+    --color-salmon: salmon;
+    --color-salmon-rows: rgba(250, 128, 114, 0.329);
 
+
+    --font-normal: 400;
+    --font-bold: 600;
 }
