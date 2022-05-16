@@ -1,17 +1,17 @@
 import { useDataContext } from "../../../provider/dataProvider"
+import { Container } from "./style"
 
 export function Table() {
 
     const { table } = useDataContext()
 
     return(
-        <div>
-            <h1>Table</h1>
+        <Container>
             <table>
-                {table.map((item: Array<string> | any, index: number) => {
+                {table?.map((item: Array<string> | any, index: number) => {
                     if(index === 0) {
                     return (
-                        <tr>
+                        <tr key={item.A}>
                             <th>{item.A}</th>
                             <th>{item.B}</th>
                             <th>{item.C}</th>
@@ -20,7 +20,7 @@ export function Table() {
                         )
                     } else {
                         return (
-                            <tr>
+                            <tr key={item.A}>
                                 <td>{item.A}</td>
                                 <td>{item.B}</td>
                                 <td>{item.C}</td>
@@ -30,6 +30,6 @@ export function Table() {
                     }
                 })}
             </table>
-        </div>
+        </Container>
     )
 }
