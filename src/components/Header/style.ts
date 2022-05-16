@@ -12,6 +12,12 @@ export const Container = styled.header`
 
     h1 {
         color: var(--header-white);
+        font-weight: var(--font-normal);
+
+        span {
+            color: var(--color-salmon);
+            font-weight: var(--font-bold);
+        }
     }
 
     button {
@@ -20,8 +26,8 @@ export const Container = styled.header`
         border-radius: 5px;
         border: none;
         margin-left: 2rem;
-        background-color: var(--header-white);
-        color: var(--header-background);
+        background-color: var(--color-salmon);
+        color: var(--header-white);
         font-size: 1.05rem;
         font-weight: bold;
         cursor: pointer;
@@ -43,7 +49,7 @@ export const InputSpan: any = styled.span`
         background-color: var(${(props: any) => props.uploadFile ? '--header-white' : '--header-background'});
         opacity: ${(props: any) => props.uploadFile ? '0.5' : '1'};
         border: 1px solid #cecece;
-        padding: 10px;
+        padding: 7.5px;
         border-radius: 5px;
         font-size: 1.05rem;
         cursor: pointer;
