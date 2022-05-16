@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Container, InputSpan } from "./style";
 import axios from "axios";
+import { useDataContext } from "../../provider/dataProvider";
 
 export function Header() {
 
-    const [uploadFile, setUploadFile] = useState<File | null>(null)
+    const [uploadFile, setUploadFile] = useState<File | null | any>()
+    const { setTable } = useDataContext()
 
     async function sendFile() {
         if (uploadFile) {
@@ -16,6 +18,7 @@ export function Header() {
                     data: { table: uploadFile }
                 })
                 console.log(resp)
+                setTable(resp?.data['PRODUTOS VAREJO'])
             } catch(error) {
                 console.log(error)
             }
