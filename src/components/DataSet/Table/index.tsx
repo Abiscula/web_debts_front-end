@@ -1,14 +1,21 @@
 import { useDataContext } from "../../../provider/dataProvider"
 import { Container } from "./style"
+interface table {
+    item: Array<object>;
+    A: string;
+    B: string;
+    C: string;
+    D: string;
+    E: string;
+}
 
 export function Table() {
-
     const { table } = useDataContext()
 
     return(
         <Container>
             <table>
-                {table?.map((item: Array<string> | any, index: number) => {
+                {table?.map((item: table, index: number) => {
                     if(index === 0) {
                     return (
                         <tr key={item.A}>
