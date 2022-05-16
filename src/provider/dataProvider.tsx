@@ -4,10 +4,10 @@ interface Props{
     children: ReactNode;
 }
 
-const DataContext = createContext({})
+const DataContext = createContext<any>('')
 
 export const DataProvider = ({ children }: Props) => {
-    const [table, setTable] = useState<object>({})
+    const [table, setTable] = useState<Array<string> | null>([])
     
     return (
         <DataContext.Provider value={{ table, setTable }}>
