@@ -5,7 +5,7 @@ import { useDataContext } from "../../provider/dataProvider";
 
 export function Header() {
 
-    const [uploadFile, setUploadFile] = useState<File | null | any>()
+    const [uploadFile, setUploadFile] = useState<File | null>()
     const { setTable } = useDataContext()
 
     async function sendFile() {
