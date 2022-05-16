@@ -22,6 +22,10 @@ export const Container = styled.main`
             padding: 0.8rem;
             background-color: var(--color-salmon-rows);
 
+            &:hover {
+                background-color: var(--color-salmon);
+            }
+
             &:first-child {
                 border-start-start-radius: 10px;
                 border-end-start-radius: 10px
