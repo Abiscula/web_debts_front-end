@@ -1,16 +1,22 @@
-import React from 'react';
 import { Normalize } from 'styled-normalize'
-import { DataSet } from './components/DataSet';
 import { Header } from './components/Header';
-import { Global } from './style';
+import { Statistic } from './components/Statistic';
+import { Table } from './components/Table';
+import { Container, Global } from './style';
 
 export function App() {
   return (
     <>
       <Normalize />
       <Global />
+
       <Header />
-      <DataSet />
+
+      <Container>
+        <Table />
+        <Statistic />
+      </Container>
+      
     </>
   );
 }
