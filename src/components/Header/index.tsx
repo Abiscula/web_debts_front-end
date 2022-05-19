@@ -27,7 +27,7 @@ export function Header() {
     return (
         <Container>
             <div>
-                <h1>Spending&<span>control</span></h1>
+                <h1>Web&<span>debts</span></h1>
             </div>
             <div>
                 <InputSpan uploadFile={uploadFile}>
