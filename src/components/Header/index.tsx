@@ -17,8 +17,7 @@ export function Header() {
                     headers: { 'Content-Type': 'multipart/form-data' },
                     data: { table: uploadFile }
                 })
-                console.log(resp)
-                setTable(resp?.data['PRODUTOS VAREJO'])
+                setTable(resp.data)
             } catch(error) {
                 console.log(error)
             }
