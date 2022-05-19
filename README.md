@@ -1,4 +1,4 @@
-# Web Debts
+# Web&debts
 
 Aplicação criada com intuito de importar arquivos do tipo XLSX e renderizar no HTML.
 
@@ -20,5 +20,6 @@ Também será implementado um select para escolha do mês que deseja visualizar 
 
 
 
-![image](https://user-images.githubusercontent.com/85578784/169214961-9c656931-5b4a-491b-8207-792f5e34e883.png)
+![image](https://user-images.githubusercontent.com/85578784/169217217-103d7f83-eaf5-4317-972d-926052ac3ce4.png)
+
 
