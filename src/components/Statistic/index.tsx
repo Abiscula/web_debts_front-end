@@ -13,7 +13,7 @@ export function Statistic() {
     const { table } = useDataContext()
     const [spent, setSpent] = useState<number>()
     const [types, setTypes] = useState<Array<string>>()
-    const [spentTypes, setSpentTypes] = useState<number>()
+    const [spentTypes, setSpentTypes] = useState<number>(0)
 
 
     useMemo(() => {
@@ -51,7 +51,7 @@ export function Statistic() {
             <div>  
                 <CircleWavyQuestion size={32} color="#fa8072" />
                 <p>Tipo de gasto</p>
-                <select onChange={(e) => handleTypes(e?.target.value)}>
+                <select onChange={(e) => handleTypes(e.target.value)}>
                     {types?.map(type => (
                         <option>{type}</option>
                     ))}
