@@ -10,6 +10,13 @@ export const Container = styled.header`
     background-color: var(--header-background);
     box-shadow: 0px 0px 9px 5px rgba(41,41,41,.5);
 
+    div:last-child {
+        width: 38%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
     h1 {
         color: var(--header-white);
         font-weight: var(--font-normal);
@@ -20,15 +27,24 @@ export const Container = styled.header`
         }
     }
 
+    select {
+        border: 1px solid #cecece;
+        width: 7rem;
+        padding: 0.44rem;
+        border-radius: 5px;
+        background-color: var(--header-background);
+        color: var(--header-white);
+        cursor: pointer;
+    }
+
     button {
-        width: 8rem;
-        padding: 10px;
+        width: 7.5rem;
+        height: 2.6rem;
         border-radius: 5px;
         border: none;
-        margin-left: 2rem;
         background-color: var(--color-salmon);
         color: var(--header-white);
-        font-size: 1.05rem;
+        font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
 
