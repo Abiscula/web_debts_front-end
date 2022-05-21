@@ -58,7 +58,7 @@ export function Header() {
 
                 <button onClick={sendFile} disabled={uploadFile === null}> Import table</button>
             </div>
-            <button className="btn-template" onClick={createXLSX}>Baixar template</button>
+            <button className="btn-template" onClick={createXLSX}>Download Template</button>
         </Container>
     )
 }
