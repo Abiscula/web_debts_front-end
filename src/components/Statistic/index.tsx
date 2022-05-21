@@ -5,8 +5,8 @@ import { useDataContext } from "../../provider/dataProvider";
 import { Container } from "./style";
 
 interface tableValues {
-    VALOR: number;
-    TIPO: string;
+    VALUE: number;
+    TYPE: string;
 }
 
 export function Statistic() {
@@ -21,8 +21,8 @@ export function Statistic() {
         let totalTypes: Array<string> = ['']
 
         table.forEach((value: tableValues) => {
-            totalSpent = totalSpent + value['VALOR']
-            totalTypes.push(value['TIPO'])
+            totalSpent = totalSpent + value['VALUE']
+            totalTypes.push(value['TYPE'])
         })
 
         setSpent(totalSpent)
@@ -33,8 +33,8 @@ export function Statistic() {
 
     function handleTypes(e: ReactNode) {
         let spentByType: number = 0
-        table.filter((value: tableValues) => value['TIPO'] === e).map((value: tableValues) => (
-            spentByType = spentByType + value['VALOR']
+        table.filter((value: tableValues) => value['TYPE'] === e).map((value: tableValues) => (
+            spentByType = spentByType + value['VALUE']
         ))
         setSpentTypes(spentByType)
     }
@@ -43,14 +43,14 @@ export function Statistic() {
         <Container>
             <div>  
                 <Coins size={32} color="#fa8072" />
-                <p>Total gasto</p>
+                <p>Total expense</p>
                 <span>R$: {spent?.toFixed(2)}</span>
                 <TrendDown size={32} color="#bb3535" />
             </div>
 
             <div>  
                 <CircleWavyQuestion size={32} color="#fa8072" />
-                <p>Tipo de gasto</p>
+                <p>Expense type</p>
                 <select onChange={(e) => handleTypes(e.target.value)}>
                     {types?.map(type => (
                         <option>{type}</option>
