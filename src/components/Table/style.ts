@@ -15,6 +15,7 @@ export const Container = styled.main`
             font-weight: var(--font-bold);
             color: var(--header-background);
             letter-spacing: 2px;
+            text-align: start;
         }
 
         td { //column
@@ -27,12 +28,26 @@ export const Container = styled.main`
 
             &:first-child {
                 border-start-start-radius: 10px;
-                border-end-start-radius: 10px
+                border-end-start-radius: 10px;
+                width: 30%;
+            }
+
+            &:nth-child(2) {
+                width: 20%;
+            }
+
+            &:nth-child(3) {
+                width: 20%;
+            }
+
+            &:nth-child(4) {
+                width: 20%;
             }
 
             &:last-child {
                 border-end-end-radius: 10px;
-                border-start-end-radius: 10px
+                border-start-end-radius: 10px;
+                width: 10%;
             }
         }
 
