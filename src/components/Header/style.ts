@@ -61,7 +61,7 @@ export const Container = styled.header`
     }
 
     .btn-template {
-        width: 5%;
+        width: 6rem;
         min-width: 6rem;
         background-color: #808080;
     }
