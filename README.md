@@ -9,8 +9,7 @@ o JSON é reestruturado e encaminhado de volta para o front-end onde é renderiz
 Após renderizar a tabela a aplicação ainda filtra alguns dados para melhor visualização das finanças, como: gasto total
 e gasto por tipo.
 
-Posteriomente será implementado um botão para impressão de um "template XLSX" de modo que se mantenha o padrão da tabela.
-Também será implementado um select para escolha do mês que deseja visualizar (cada mês será correspondente a uma "folha" do excel).
+Implementado botão para download do "template XLSX" visando que se mantenha o padrão da tabela.
 
 <ul>
   <li>Front-end: React JS (com typescript)</li>
@@ -18,8 +17,5 @@ Também será implementado um select para escolha do mês que deseja visualizar 
 </ul>
 
 
-
-
-![image](https://user-images.githubusercontent.com/85578784/169217217-103d7f83-eaf5-4317-972d-926052ac3ce4.png)
-
+![image](https://user-images.githubusercontent.com/85578784/169666055-60728995-a539-45a8-bc5f-d69ba2d3c7ae.png)
 
