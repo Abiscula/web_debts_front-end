@@ -1,17 +1,18 @@
 import { useDataContext } from "../../provider/dataProvider"
 import { Container } from "./style"
-// interface table {
-//     item: Array<object>;
-//     CONTAS: string;
-//     B: string;
-//     C: string;
-//     D: string;
-//     E: string;
-// }
+
+interface tableValues {
+    DEBITS: string;
+    "PLACE OF PURCHASE": string;
+    TYPE: string;
+    VALUE: number;
+    STATS: string;
+
+}
 
 export function Table() {
     const { table } = useDataContext()
-    const columns = ['CONTAS', 'LOCAL DE COMPRA', 'TIPO', 'VALOR', 'STATUS']
+    const columns = ['DEBITS', 'PLACE OF PURCHASE', 'TYPE', 'VALUE', 'PARCEL', 'STATS']
 
     return(
         <Container>
@@ -26,14 +27,14 @@ export function Table() {
                     </tr> 
                 : ''}
                 
-                {table?.map((item: any, index: number) => {                    
+                {table?.map((item: tableValues, index: number) => {                    
                     return (
                         <tr key={index}>
-                            <td>{item['CONTAS']}</td>
-                            <td>{item['LOCAL DE COMPRA']}</td>
-                            <td>{item['TIPO']}</td>
-                            <td>{item['VALOR']}</td>
-                            <td>{item['STATUS']}</td>
+                            <td>{item['DEBITS']}</td>
+                            <td>{item['PLACE OF PURCHASE']}</td>
+                            <td>{item['TYPE']}</td>
+                            <td>R$: {item['VALUE'].toFixed(2)}</td>
+                            <td>{item['STATS']}</td>
                         </tr>
                     )
                 })}
