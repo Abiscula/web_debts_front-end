@@ -10,13 +10,6 @@ export const Container = styled.header`
     background-color: var(--header-background);
     box-shadow: 0px 0px 9px 5px rgba(41,41,41,.5);
 
-    div:last-child {
-        width: 38%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
     h1 {
         color: var(--header-white);
         font-weight: var(--font-normal);
@@ -27,6 +20,13 @@ export const Container = styled.header`
         }
     }
 
+    div:last-child {
+        width: 38%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
     select {
         border: 1px solid #cecece;
         width: 7rem;
@@ -35,6 +35,8 @@ export const Container = styled.header`
         background-color: var(--header-background);
         color: var(--header-white);
         cursor: pointer;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 
     button {
@@ -56,6 +58,12 @@ export const Container = styled.header`
         &:disabled {
             opacity: 0.5;
         }
+    }
+
+    .btn-template {
+        width: 5%;
+        min-width: 6rem;
+        background-color: #808080;
     }
 `
 
