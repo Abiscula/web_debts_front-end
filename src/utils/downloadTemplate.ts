@@ -14,7 +14,7 @@ export function createXLSX() {
 
     months.shift() //removendo primeiro elemento (espaço vazio)
     wb.SheetNames.push(...months); //Cria o worksheet
-    const ws_data = [['CONTAS', 'LOCAL DE COMPRA', 'TIPO', 'VALOR', 'PARCELA', 'STATUS']]; //nome das colunas
+    const ws_data = [['DEBITS', 'PLACE OF PURCHASE', 'TYPE', 'VALUE', 'PARCEL', 'STATS']]; //nome das colunas
     const ws = XLSX.utils.aoa_to_sheet(ws_data); //cria a página (sheet)
     const wscols = [ //determina a largura das colunas
         { wch: 20 },
@@ -34,9 +34,9 @@ export function createXLSX() {
     downLoadExcel(wbout)
 }
 
-function downLoadExcel(bin_file: any) {
+function downLoadExcel(bin_file: BinaryType) {
     let buf = new ArrayBuffer(bin_file.length) //convert bin para arrayBuffer
     let view = new Uint8Array(buf)  //cria um uint8array
     for (let i = 0; i < bin_file.length; i++) view[i] = bin_file.charCodeAt(i) & 0xFF //convert to octet
-    saveAs(new Blob([buf], { type: "application/octet-stream" }), 'text.xlsx')
+    saveAs(new Blob([buf], { type: "application/octet-stream" }), 'web-debts.xlsx')
 }
