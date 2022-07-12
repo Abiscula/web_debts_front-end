@@ -12,7 +12,7 @@ interface tableValues {
 
 export function Table() {
     const { table } = useDataContext()
-    const columns = ['DEBITS', 'PLACE OF PURCHASE', 'TYPE', 'VALUE', 'PARCEL', 'STATS']
+    const columns = ['DEBITS', 'PLACE OF PURCHASE', 'TYPE', 'VALUE', 'STATS']
 
     return(
         <Container>
