@@ -6,6 +6,7 @@ export const Global = createGlobalStyle`
         background-color: var(--background);
         font-family: 'Poppins', sans-serif;
         font-weight: var(--font-normal);
+        overflow-x: hidden;
     }
 `
 
