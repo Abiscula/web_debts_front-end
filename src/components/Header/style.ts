@@ -61,7 +61,11 @@ export const Container = styled.header`
     }
 
     .btn-template {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 6rem;
+        padding: 1.5rem;
         min-width: 6rem;
         background-color: #808080;
     }
