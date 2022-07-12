@@ -13,8 +13,7 @@ export const Global = createGlobalStyle`
 export const Container = styled.main`
     display: flex;
     margin: 0 auto;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-around;
-    margin-top: 2.5rem;
     width: 80vw;
 `
