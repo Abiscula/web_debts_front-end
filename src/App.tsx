@@ -1,13 +1,10 @@
 import { Normalize } from 'styled-normalize'
 import { Header } from './components/Header';
-import { Statistic } from './components/Statistic';
-import { Table } from './components/Table';
-import { useDataContext } from './provider/dataProvider';
+import { AppRouter } from './routes.js'
 import { Container, Global } from './style';
 
 export function App() {
 
-  const { table } = useDataContext()
 
   return (
     <>
@@ -15,10 +12,9 @@ export function App() {
       <Global />
 
       <Header />
-
       <Container>
-        <Table />
-        {table.length !== 0 ? <Statistic /> : ''}
+        {/* {table.length !== 0 && window.location.pathname === '/' ? <Statistic /> : ''} */}
+        <AppRouter />
       </Container>
       
     </>
