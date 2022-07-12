@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Menu } from './components/Menu';
-import { Table } from './components/Table';
-import { Statistic } from "./components/Statistic";
-import { Graph } from "./components/Graph";
+import { Table } from './pages/Table';
+import { Statistic } from "./pages/Statistic";
+import { Graph } from "./pages/Graph";
 
 export function AppRouter() {
   return (
