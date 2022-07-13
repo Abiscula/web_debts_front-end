@@ -1,8 +1,9 @@
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import { CircleWavyQuestion, Coins, TrendDown } from "phosphor-react";
 
 import { useDataContext } from "../../provider/dataProvider";
 import { Container } from "./style";
+import { useNavigate } from "react-router";
 
 interface tableValues {
     VALUE: number;
@@ -10,11 +11,17 @@ interface tableValues {
 }
 
 export function Statistic() {
+    const navigate = useNavigate()
     const { table } = useDataContext()
     const [spent, setSpent] = useState<number>()
     const [types, setTypes] = useState<Array<string>>()
     const [spentTypes, setSpentTypes] = useState<number>(0)
 
+    useEffect(() => {
+        if(table.length === 0) {
+          navigate('/')
+        }
+      }, [table.length, navigate])
 
     useMemo(() => {
         let totalSpent: number = 0
