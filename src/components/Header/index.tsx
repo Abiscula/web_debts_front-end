@@ -50,8 +50,8 @@ export function Header() {
                     />
                 </InputSpan>
                 <select onChange={(e) => setSelectedMonth(e.target.value)}>
-                    {months.map((month: string) => (
-                        <option>{month}</option>
+                    {months.map((month: string, index: number) => (
+                        <option key={index}>{month}</option>
                     ))}
                 </select>
 
